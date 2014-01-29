@@ -1,0 +1,23 @@
+{
+  "name": "simple-router",
+  "version": "0.1.0",
+  "description": "Simple-router is a middleware-compatible router with promises support.",
+  "main": "index.js",
+  "dependencies": {
+    "bluebird": "~1.0.1",
+    "connect-stack": "~0.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "keywords": [
+    "router",
+    "promises",
+    "middleware",
+    "express",
+    "connect"
+  ],
+  "author": "spion",
+  "license": "MIT"
+}
