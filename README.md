@@ -1,7 +1,6 @@
-# promised router
+# simple router
 
-Simple-router is a middleware-compatible router with
-promises support.
+Simple-router is a middleware-compatible router with promises support.
 
 ```js
 var app = simpleRouter();
