@@ -5,9 +5,12 @@
   "main": "lib/index.js",
   "dependencies": {
     "bluebird": "~1.0.1",
-    "connect-stack": "~0.1.5"
+    "connect-stack": "~0.1.5",
+    "fast-url-parser": "~1.0.6-0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "tape": "~2.3.2"
+  },
   "scripts": {
     "test": "node test/index.js"
   },
