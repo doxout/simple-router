@@ -22,5 +22,16 @@
     "connect"
   ],
   "author": "spion",
-  "license": "MIT"
+  "license": "MIT",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/doxout/simple-router.git"
+  },
+  "bugs": {
+    "url": "https://github.com/doxout/simple-router/issues"
+  },
+  "homepage": "https://github.com/doxout/simple-router"
 }
