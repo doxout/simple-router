@@ -12,11 +12,11 @@ app.use('/test', function(req, res) {
 });
 
 app.use('/answer', function(req, res) {
-    res.answer({helo: 'World'});
+    res.answer({hello: 'World'});
 });
 
 app.use('/promise', function(req, res) {
-    return Promise.cast({helo: 'World'});
+    return Promise.cast({hello: 'World'});
 });
 
 app.use('/exit', function() {
