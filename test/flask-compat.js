@@ -11,8 +11,8 @@ function translates(x, y) {
 translates('/a/<b>/c', '/a/:b/c');
 translates('/a/<b>', '/a/:b');
 translates('/a/<b>/<c>', '/a/:b/:c');
-translates('/a<b:path>/c', '/a/*b/c');
-translates('/a<b(optional=true):path>/c', '/a/*b/c');
-translates('/a<b:path>/<c>', '/a/*b/:c');
-translates('/a/<b:notpath>', '/a/:b');
+translates('/a<path:b>/c', '/a/*b/c');
+translates('/a<path(optional=true):b>/c', '/a/*b/c');
+translates('/a<path:b>/<c>', '/a/*b/:c');
+translates('/a/<notpath:path>', '/a/:path');
 
