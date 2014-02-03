@@ -1,6 +1,6 @@
 {
   "name": "simple-router",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Simple-router is a middleware-compatible router with promises support.",
   "main": "lib/index.js",
   "dependencies": {
