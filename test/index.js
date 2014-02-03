@@ -46,6 +46,11 @@ app.get('/specific/throw', function(err, req, res, next) {
     });
 });
 
+app.get('/flask<path:path>/<id>', function(req, res) {
+    res.answer(req.query);
+});
+
+
 app.use(function(err, req, res, next) {
     res.answer(err);
 });
@@ -128,5 +133,15 @@ t.test('string response', function(t) {
         t.end();
     });
 });
+
+t.test('flask route', function(t) {
+    return test('GET', '/flask/to/some/id').then(function(res) {
+        var j = JSON.parse(res.body);
+        t.equals(j.path, 'to/some', 'should extract path');
+        t.equals(j.id, 'id', 'should extract id');
+        t.end();
+    });
+});
+
 
 //TODO: test stream
