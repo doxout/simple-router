@@ -38,10 +38,13 @@ http.createServer(app.server()).listen(8081);
 Install a sub-router or a global middleware. req.url will be rewritten
 
 
-### app.<method>(routeSpec, middleware...)
+### app.method(routeSpec, middleware...)
 
 Add a handler for the specified method that calls the specified middleware 
 function.
+
+Replace `method` with any of: get, post, put, delete, patch, options, head
+Use `all` to match all methods.
 
 Express and connect middleware should work.
 
@@ -61,10 +64,14 @@ the original url.
 
 The path part of req.url without the query string
 
-### `req.query`, `req.params`
+### `req.query`
 
-The query parameters of `req.url`, as well as any named parameters contained in
-the path as matched by the route spec. For example
+The query parameters of `req.url`
+
+### `req.params`
+
+Named parameters contained in the path as matched by the route spec. 
+For example
 
 `app.get('/post/:id')`
 
