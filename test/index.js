@@ -25,9 +25,7 @@ app.get('/stream', function(req, res) {
 
 
 app.get('/file/*path/:id', function(req, res) {
-    console.log("/file/path/id/id route");
-    console.log(req.query);
-    return Promise.cast(req.query);
+    return Promise.cast({params: req.params, query: req.query});
 });
 
 app.use('/specific', function(req, res, next) {
@@ -47,7 +45,7 @@ app.get('/specific/throw', function(err, req, res, next) {
 });
 
 app.get('/flask<path:path>/<id>', function(req, res) {
-    res.answer(req.query);
+    res.answer(req.params);
 });
 
 
@@ -88,9 +86,9 @@ function test(method, url) {
 t.test('simple test', function(t) {
     return test('GET', '/file/path/to/id/123?test=1').then(function(res) {
         var j = JSON.parse(res.body);
-        t.equals(j.path, 'path/to/id')
-        t.equals(j.id, '123')
-        t.equals(j.test, '1')
+        t.equals(j.params.path, 'path/to/id')
+        t.equals(j.params.id, '123')
+        t.equals(j.query.test, '1')
     });
 });
 
