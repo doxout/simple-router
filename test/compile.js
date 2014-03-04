@@ -11,14 +11,14 @@ function matches(b, route, path, params) {
             t.ok(extract, 'should match');
             if (params) {
                 var o = {};
-                for (var k = 0; k < extract.names.length; ++k) 
+                for (var k = 0; k < extract.names.length; ++k)
                     o[extract.names[k]] = extract.values[k];
                 t.deepEquals(o, params);
             }
 
         } else {
             t.notOk(compile(route)(path), 'should not match');
-        }        
+        }
         t.end();
     });
 }
@@ -45,4 +45,3 @@ matches('/a/*b/:c', '/a/b/d',   {b:'b', c:'d'});
 
 
 matches('/a/$b/:c', '/a/$b/c', {c: 'c'});
-

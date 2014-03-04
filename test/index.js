@@ -1,8 +1,7 @@
 var t = require('blue-tape');
-//var t = require('tape');
 var Promise = require('bluebird');
 var router = require('../lib/index');
-
+var through = require('through');
 
 
 var app = router();
@@ -39,7 +38,7 @@ app.get('/specific/throw', function(req, res) {
 
 app.get('/specific/throw', function(err, req, res, next) {
     res.answer({
-        caughtSpecific: true, 
+        caughtSpecific: true,
         throughSpecific: req.throughSpecific
     });
 });
