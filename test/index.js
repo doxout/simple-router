@@ -1,7 +1,7 @@
 var t = require('blue-tape');
 var Promise = require('bluebird');
 var router = require('../lib/index');
-var through = require('through');
+var through = require('through2');
 
 
 var app = router();
