@@ -6,7 +6,8 @@
   "dependencies": {
     "bluebird": "~1.0.3",
     "connect-stack": "~0.1.6",
-    "fast-url-parser": "~1.0.6-0"
+    "fast-url-parser": "~1.0.6-0",
+    "querystringparser": "^0.1.0"
   },
   "devDependencies": {
     "tape": "~2.3.2",

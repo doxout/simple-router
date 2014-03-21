@@ -3,6 +3,14 @@ var router = require('../../lib/index');
 
 var app = router();
 
+
+var o = {
+    then: function(f, r) {
+        f({hello: 'World'});
+        return this;
+    }
+}
+
 app.get('/file/*path/id/:id', function(req, res) {
     return Promise.cast(req.query);
 });
@@ -16,8 +24,13 @@ app.use('/answer', function(req, res) {
 });
 
 app.use('/promise', function(req, res) {
-    return Promise.cast({hello: 'World'});
+    return Promise.resolve({hello: 'World'});
 });
+
+app.use('/thenable', function(req, res) {
+    return o;
+});
+
 
 app.use('/exit', function() {
     process.exit();

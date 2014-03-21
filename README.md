@@ -91,6 +91,7 @@ Send a response. Available types for data:
   * data contains:
     * message - the error message
     * stack - the error stack (only `NODE_ENV=development` or `NODE_ENV=test`)
+    * data - the error.data property, if any. Useful to send extra data.
 * String - sent as is
   * assumes hedaers `content-type: text/html; charset=utf-8` unless specified
 
