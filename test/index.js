@@ -47,6 +47,12 @@ app.get('/flask<path:path>/<id>', function(req, res) {
     res.answer(req.params);
 });
 
+app.get('/overlap/*star', function(req, res) {
+    res.answer({star: true});
+});
+app.get('/overlap-url', function(req, res) {
+    res.answer({star: false});
+});
 
 app.use(function(err, req, res, next) {
     res.answer(err);
@@ -85,7 +91,7 @@ function test(method, url) {
 t.test('simple test', function(t) {
     return test('GET', '/file/path/to/id/123?test=1').then(function(res) {
         var j = JSON.parse(res.body);
-        t.equals(j.params.path, 'path/to/id')
+        t.equals(j.params.path, '/path/to/id')
         t.equals(j.params.id, '123')
         t.equals(j.query.test, '1')
     });
@@ -134,11 +140,17 @@ t.test('string response', function(t) {
 t.test('flask route', function(t) {
     return test('GET', '/flask/to/some/id').then(function(res) {
         var j = JSON.parse(res.body);
-        t.equals(j.path, 'to/some', 'should extract path');
+        t.equals(j.path, '/to/some', 'should extract path');
         t.equals(j.id, 'id', 'should extract id');
         t.end();
     });
 });
 
 
-//TODO: test stream
+t.test('overlaping star routes', function(t) {
+    return test('GET', '/overlap-url').then(function(res) {
+        var j = JSON.parse(res.body);
+        t.notOk(j.star, 'should not get response from star');
+    });
+});
+
