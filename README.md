@@ -95,7 +95,7 @@ Send a response. Available types for data:
 * String - sent as is
   * assumes hedaers `content-type: text/html; charset=utf-8` unless specified
 
-All types except `Error` default to error code 200.
+All types except `Error` default to http code 200.
 
 
 # route specs
