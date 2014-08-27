@@ -48,8 +48,13 @@ Use `all` to match all methods.
 
 Express and connect middleware should work.
 
-Middleware functions may also return a promise. Promise results are handled
-via the response mixin `res.answer`
+Middleware functions may also return a promise. 
+
+### promise handling
+
+Promise results are handled depending on their resolution
+* Fulfilled promises are handled via the response mixin method `res.answer` (see below)
+* Errors from rejected promises are forwarded to the next middleware that handles errors i.e. middleware that is in the format `function(err, req, res, next)`
 
 ## req mixins
 
