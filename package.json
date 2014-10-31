@@ -4,10 +4,10 @@
   "description": "Simple-router is a middleware-compatible router with support for promises.",
   "main": "lib/index.js",
   "dependencies": {
-    "bluebird": "~1.0.3",
+    "bluebird": "^2.3.10",
     "connect-stack": "~0.1.6",
-    "fast-url-parser": "~1.0.6-0",
-    "querystringparser": "^0.1.0"
+    "fast-url-parser": "^1.0.6-0",
+    "querystringparser": "^0.1.1"
   },
   "devDependencies": {
     "tape": "~2.3.2",
