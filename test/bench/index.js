@@ -1,4 +1,5 @@
 var Promise = require('bluebird');
+
 var router = require('../../lib/index');
 
 var app = router();
@@ -37,7 +38,8 @@ app.use('/exit', function() {
 });
 
 require('http').createServer(app.server()).listen(8001);
+
 require('http').createServer(function(req, res) {
-    res.end(JSON.stringify({"hello":"world"}));
+    res.end("Hello world");
 }).listen(8002);
 
