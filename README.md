@@ -10,8 +10,7 @@ var app = simpleRouter();
 app.use(middleware);
 
 // modifies req.url
-app.use('/path', middleware);
-app.use('/path', middleware1, middleware2);
+app.use('/path', otherApp);
 
 // doesnt modify req.url
 app.get('/user/:id', authMiddleware, function(req) {
