@@ -87,6 +87,12 @@ will result with the addition of `req.query.id`
 
 Send a response. Available types for data:
 
+* An object with a method named `toCodeHeadersData`
+  
+  Will call the object's method and expect a response in the format {code, headers, data}. The code
+  and headers will be written to the response head. The data property can be a string or a buffer, which
+  will be written to the response, or a stream, which will be piped to the response stream.
+
 * Buffer - Sent as is
 * Stream - Piped to the response
 * Error e - Sends the error to the client. 

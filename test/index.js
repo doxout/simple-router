@@ -54,6 +54,15 @@ app.get('/overlap-url', function(req, res) {
     res.answer({star: false});
 });
 
+app.get('/code-headers-data', function(req, res) {
+
+  res.answer({
+    toCodeHeadersData: function() {
+      return {code: 201, headers: {'Test-Header': 'header'}, data: 'data'};
+    }
+  })
+})
+
 app.use(function(err, req, res, next) {
     res.answer(err);
 });
@@ -153,4 +162,12 @@ t.test('overlaping star routes', function(t) {
         t.notOk(j.star, 'should not get response from star');
     });
 });
+
+t.test('code-headers-data', function(t) {
+    return test('GET', '/code-headers-data').then(function(r) {
+        t.equals(r.code, 201, 'code is properly passed')
+        t.equals(r.body, 'data', 'data properly sent')
+        t.equals(r.headers['Test-Header'], 'header', 'header properly added')
+    })
+})
 
