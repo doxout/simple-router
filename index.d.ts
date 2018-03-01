@@ -36,6 +36,7 @@ interface SimpleRouter {
     head(path:string, ...handler:Router.Handler[]):void;
     delete(path:string, ...handler:Router.Handler[]):void;
     use(path:string, ...handler:Router.Handler[]):void;
+    patch(path:string, ...handler:Router.Handler[]):void;
     all(path:string, ...handler:Router.Handler[]):void;
     propfind(path:string, ...handler:Router.Handler[]):void;
     proppatch(path:string, ...handler:Router.Handler[]):void;
