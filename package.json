@@ -10,6 +10,7 @@
     "querystringparser": "^0.1.1"
   },
   "devDependencies": {
+    "blue-tape": "^1.0.0",
     "tape": "~2.3.2",
     "through2": "^0.4.1"
   },
