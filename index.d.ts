@@ -2,6 +2,7 @@
 declare module "simple-router" {
     function mkRouter(): SimpleRouter;
 
+    import http = require("http");
     import express = require("express");
 
     interface Obj {}
@@ -31,23 +32,23 @@ declare module "simple-router" {
     }
 
     interface SimpleRouter {
-        get(path:string, ...handler:Router.Handler[]):void;
-        post(path:string, ...handler:Router.Handler[]):void;
-        put(path:string, ...handler:Router.Handler[]):void;
-        head(path:string, ...handler:Router.Handler[]):void;
-        delete(path:string, ...handler:Router.Handler[]):void;
-        use(path:string, ...handler:Router.Handler[]):void;
-        patch(path:string, ...handler:Router.Handler[]):void;
-        all(path:string, ...handler:Router.Handler[]):void;
-        propfind(path:string, ...handler:Router.Handler[]):void;
-        proppatch(path:string, ...handler:Router.Handler[]):void;
-        mkcol(path:string, ...handler:Router.Handler[]):void;
-        copy(path:string, ...handler:Router.Handler[]):void;
-        move(path:string, ...handler:Router.Handler[]):void;
-        lock(path:string, ...handler:Router.Handler[]):void;
-        unlock(path:string, ...handler:Router.Handler[]):void;
-        options(path:string, ...handler:Router.Handler[]):void;
-        route:Router.Route;
+        get(path:string, ...handler:mkRouter.Handler[]):void;
+        post(path:string, ...handler:mkRouter.Handler[]):void;
+        put(path:string, ...handler:mkRouter.Handler[]):void;
+        head(path:string, ...handler:mkRouter.Handler[]):void;
+        delete(path:string, ...handler:mkRouter.Handler[]):void;
+        use(path:string, ...handler:mkRouter.Handler[]):void;
+        patch(path:string, ...handler:mkRouter.Handler[]):void;
+        all(path:string, ...handler:mkRouter.Handler[]):void;
+        propfind(path:string, ...handler:mkRouter.Handler[]):void;
+        proppatch(path:string, ...handler:mkRouter.Handler[]):void;
+        mkcol(path:string, ...handler:mkRouter.Handler[]):void;
+        copy(path:string, ...handler:mkRouter.Handler[]):void;
+        move(path:string, ...handler:mkRouter.Handler[]):void;
+        lock(path:string, ...handler:mkRouter.Handler[]):void;
+        unlock(path:string, ...handler:mkRouter.Handler[]):void;
+        options(path:string, ...handler:mkRouter.Handler[]):void;
+        route:mkRouter.Route;
         server(): (req:http.IncomingMessage, res:http.ServerResponse) => void;
     }
 
